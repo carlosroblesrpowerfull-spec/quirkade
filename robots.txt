@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://quirkade.com/sitemap.xml

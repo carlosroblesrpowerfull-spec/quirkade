@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Quirkade – Free quirky games, play instantly</title>
+<meta name="description" content="Quirkade: handcrafted free games with their own look and sound. No download, no sign-up. Play instantly on phone, tablet or desktop.">
+<meta property="og:title" content="Quirkade – quirky games, play instantly"><meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="mark.svg"><meta name="theme-color" content="#14102b">
+<style>
+:root{--bg:#14102b;--bg2:#1d1740;--ink:#f6f1ff;--mut:#a79fc9;--hot:#ffd24a;--pink:#ff5fa2;--mint:#3fe0c5;--r:20px}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg);color:var(--ink);font:16px/1.5 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
+body{min-height:100vh;background:radial-gradient(900px 500px at 85% -10%,#3b1f7a55,transparent),radial-gradient(700px 400px at -10% 20%,#0f6f7a40,transparent),var(--bg)}
+a{color:inherit}
+header{display:flex;align-items:center;gap:14px;padding:14px clamp(14px,4vw,40px);position:sticky;top:0;z-index:20;background:#14102bdd;backdrop-filter:blur(10px);border-bottom:1px solid #ffffff14}
+.logo{font-weight:900;font-size:26px;letter-spacing:-1px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:30px;height:30px;border-radius:9px;background:conic-gradient(from 200deg,var(--pink),var(--hot),var(--mint),var(--pink));display:inline-block;transform:rotate(-8deg);box-shadow:0 4px 0 #0005}
+.logo b{background:linear-gradient(90deg,var(--hot),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sp{flex:1}
+select,input{font:inherit;color:var(--ink);background:var(--bg2);border:1px solid #ffffff22;border-radius:12px;padding:8px 12px}
+input{width:min(240px,34vw)}
+main{padding:0 clamp(14px,4vw,40px) 60px;max-width:1240px;margin:0 auto}
+.hero{padding:40px 0 18px}
+.hero h1{font-size:clamp(34px,6vw,64px);line-height:1.02;letter-spacing:-2px;font-weight:900}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--hot),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);max-width:560px;margin-top:12px;font-size:18px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 18px}
+.chip{border:1px solid #ffffff26;background:transparent;color:var(--ink);padding:8px 16px;border-radius:99px;font:inherit;font-weight:700;cursor:pointer}
+.chip.on{background:var(--hot);color:#2a1a00;border-color:var(--hot)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:16px}
+.card{position:relative;border-radius:var(--r);overflow:hidden;background:var(--bg2);text-decoration:none;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;box-shadow:0 6px 0 #0004;cursor:pointer;border:0;color:inherit;text-align:left;font:inherit;padding:0}
+.card:hover,.card:focus-visible{transform:translateY(-4px) rotate(-.6deg);box-shadow:0 12px 0 #0004,0 0 0 3px var(--c)}
+.card img{width:100%;aspect-ratio:1;display:block;object-fit:cover}
+.card .t{padding:10px 12px 12px}
+.card b{display:block;font-size:17px}
+.card small{color:var(--mut);display:block;line-height:1.3;margin-top:2px}
+.badge{position:absolute;top:8px;left:8px;background:#000a;border-radius:99px;padding:3px 10px;font-size:12px;font-weight:700}
+.badge.two{background:var(--mint);color:#04332b}
+.new{background:var(--pink)}
+h2{font-size:22px;margin:34px 0 14px}
+.play{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;padding-top:18px}
+.stage{background:radial-gradient(circle at 50% 40%,var(--c,#2a2060),#0a0818);border-radius:var(--r);overflow:hidden;position:relative;display:flex;justify-content:center;box-shadow:0 10px 0 #0004;height:min(80vh,820px);min-height:420px}
+.stage iframe{border:0;height:100%;width:100%;max-width:560px;background:#000}
+.side{display:flex;flex-direction:column;gap:14px}
+.box{background:var(--bg2);border-radius:var(--r);padding:16px}
+.box h3{font-size:15px;color:var(--mut);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.btn{text-decoration:none;display:inline-block;font:inherit;font-weight:800;border:0;border-radius:14px;padding:12px 18px;background:var(--hot);color:#2a1a00;cursor:pointer;box-shadow:0 4px 0 #b88a00}
+.btn.g{background:#ffffff1c;color:var(--ink);box-shadow:none}
+.ad{display:none;min-height:100px;border-radius:14px;background:#ffffff0a;border:1px dashed #ffffff20;text-align:center;color:var(--mut);font-size:12px;overflow:hidden}
+.ad.on{display:block}
+.bar{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;align-items:center}
+footer{border-top:1px solid #ffffff14;padding:26px clamp(14px,4vw,40px);color:var(--mut);display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+.cmp{position:fixed;left:12px;right:12px;bottom:12px;max-width:560px;margin:auto;background:#241d44;border:1px solid #ffffff2a;border-radius:18px;padding:16px;z-index:50;display:none;box-shadow:0 12px 40px #000a}
+.cmp p{font-size:14px;color:var(--mut);margin-bottom:12px}.cmp .bar{margin:0}
+.legal{max-width:760px;padding:30px 0}.legal h1{font-size:34px;margin-bottom:14px}.legal p{color:#d7d0ee;margin:10px 0}
+@media(max-width:860px){.play{grid-template-columns:1fr}.stage{height:78vh}input{display:none}}
+.rail{display:none}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+body.theater .play{grid-template-columns:1fr}
+body.theater .stage{height:min(88vh,980px)}
+body.theater .stage iframe{max-width:none}
+body.theater .side{flex-direction:row;flex-wrap:wrap}
+body.theater .side .box{flex:1 1 220px}
+@media(min-width:1500px){.rail{display:block;position:fixed;top:90px;width:160px;min-height:600px}.rail.l{left:max(8px,calc(50% - 780px))}.rail.r{right:max(8px,calc(50% - 780px))}}
+body.fs .stage{position:fixed;inset:0;z-index:99;border-radius:0;height:100vh}
+</style></head>
+<body>
+<header><a class="logo" href="#/"><img src="mark.svg" alt="" width="38" height="38"><b>Quirkade</b></a><div class="sp"></div><input id="q" type="search" aria-label="search"><select id="lang" aria-label="language"><option value="en">English</option><option value="es">Español</option><option value="de">Deutsch</option><option value="pt">Português</option></select></header>
+<main id="app"></main>
+<footer><span>© Quirkade</span><a href="#/privacy" data-i="privacy"></a><a href="#/about" data-i="about"></a></footer>
+<div class="cmp" id="cmp"><p data-i="consent"></p><div class="bar"><button class="btn" id="cOk" data-i="accept"></button><button class="btn g" id="cNo" data-i="decline"></button></div></div>
+<script>
+window.CATALOG={"site":{"name":"Quirkade","domain":"quirkade.com"},"games":[{"slug":"lumo","name":"Lumo","color":"#7b5cff","genre":"puzzle","players":1,"touch":true,"kb":false,"tag":{"en":"Light the night, one glow at a time","es":"Enciende la noche, un destello a la vez","de":"Erhelle die Nacht, Funken für Funken","pt":"Acenda a noite, um brilho de cada vez"},"how":{"en":"Tap or click to guide the light.","es":"Toca o haz clic para guiar la luz.","de":"Tippen oder klicken, um das Licht zu lenken.","pt":"Toque ou clique para guiar a luz."}},{"slug":"eclipse","name":"Eclipse","color":"#ff9d3d","genre":"arcade","players":1,"touch":true,"kb":false,"tag":{"en":"Time the sun, catch the shadow","es":"Cronometra el sol, atrapa la sombra","de":"Timing von Sonne und Schatten","pt":"Cronometre o sol, pegue a sombra"},"how":{"en":"Tap or click on the beat.","es":"Toca o haz clic al ritmo.","de":"Im Takt tippen oder klicken.","pt":"Toque ou clique no ritmo."}},{"slug":"tidepop","name":"Tidepop","color":"#2fd0c8","genre":"puzzle","players":1,"touch":true,"kb":false,"tag":{"en":"Pop bubbles on a calm tide","es":"Revienta burbujas con la marea","de":"Blasen platzen lassen mit der Flut","pt":"Estoure bolhas na maré"},"how":{"en":"Click or tap bubbles to pop.","es":"Haz clic o toca burbujas para reventarlas.","de":"Blasen anklicken oder antippen.","pt":"Clique ou toque nas bolhas."}},{"slug":"dippy","name":"Dippy","color":"#ff6f91","genre":"casual","players":1,"touch":true,"kb":false,"tag":{"en":"Dip, drip, delight","es":"Sumerge, gotea, disfruta","de":"Eintauchen, tropfen, genießen","pt":"Mergulhe, pingue, aproveite"},"how":{"en":"Drag and release with mouse or finger.","es":"Arrastra y suelta con ratón o dedo.","de":"Mit Maus oder Finger ziehen und loslassen.","pt":"Arraste e solte com mouse ou dedo."}},{"slug":"brewzy","name":"Brewzy","color":"#c8894a","genre":"casual","players":1,"touch":true,"kb":false,"tag":{"en":"Run your tiny tea and coffee shop","es":"Atiende tu pequeña tienda de té y café","de":"Führe dein kleines Tee- und Kaffeehaus","pt":"Cuide da sua pequena casa de chá e café"},"how":{"en":"Click or tap to mix and serve.","es":"Haz clic o toca para mezclar y servir.","de":"Zum Mischen und Servieren klicken.","pt":"Clique ou toque para misturar e servir."}},{"slug":"pinatapop","name":"Pinata Pop","color":"#ff4fa3","genre":"arcade","players":1,"touch":true,"kb":false,"tag":{"en":"Aim, shoot, shower the candy","es":"Apunta, dispara, lluvia de dulces","de":"Zielen, schießen, Süßigkeitenregen","pt":"Mire, atire, chuva de doces"},"how":{"en":"Drag to aim, release to fire.","es":"Arrastra para apuntar, suelta para disparar.","de":"Ziehen zum Zielen, loslassen zum Schießen.","pt":"Arraste para mirar, solte para atirar."}},{"slug":"mandalo","name":"Mandalo","color":"#3fb6a8","genre":"puzzle","players":1,"touch":true,"kb":false,"tag":{"en":"Fill the mandala, find the calm","es":"Completa el mandala, encuentra la calma","de":"Fülle das Mandala, finde die Ruhe","pt":"Complete o mandala, encontre a calma"},"how":{"en":"Drag pieces onto the board.","es":"Arrastra las piezas al tablero.","de":"Teile aufs Brett ziehen.","pt":"Arraste as peças para o tabuleiro."}}]};
+var CFG={adsenseClient:'' /* e.g. 'ca-pub-XXXXXXXXXXXXXXXX' once approved */, ga:''};
+var T={
+en:{big:'Bigger',small:'Smaller',tag:'Free games with their own look and sound.',h1a:'Play something',h1b:'delightfully odd.',sub:'Handcrafted games, no download, no sign-up. Open, play, smile.',all:'All',puzzle:'Puzzle',arcade:'Arcade',casual:'Casual',two:'2 players',search:'Search games',play:'Play',fs:'Fullscreen',exit:'Exit',how:'How to play',more:'More games',back:'All games',privacy:'Privacy',about:'About',consent:'We use cookies for ads and to measure visits. You can play without them.',accept:'Accept',decline:'Only essential',newb:'New',aboutT:'About Quirkade',aboutP:'Quirkade is a small studio making games that look and sound like nobody else. Every game is built by hand, free to play, and works on phones and computers.',privT:'Privacy',privP1:'Games run in your browser. Progress is saved on your device only (local storage). We do not ask you to register.',privP2:'If you accept cookies, our advertising partners (such as Google AdSense) may use them to show and measure ads. You can change your choice any time by clearing site data. Children under 13 should play with a parent.',privP3:'Contact: add your email here.',players1:'1 player',players2:'2 players'},
+es:{big:'Agrandar',small:'Reducir',tag:'Juegos gratis con look y sonido propios.',h1a:'Juega algo',h1b:'encantadoramente raro.',sub:'Juegos hechos a mano, sin descargas ni registro. Abre, juega, sonríe.',all:'Todos',puzzle:'Puzzle',arcade:'Arcade',casual:'Casual',two:'2 jugadores',search:'Buscar juegos',play:'Jugar',fs:'Pantalla completa',exit:'Salir',how:'Cómo se juega',more:'Más juegos',back:'Todos los juegos',privacy:'Privacidad',about:'Acerca de',consent:'Usamos cookies para anuncios y medir visitas. Puedes jugar sin ellas.',accept:'Aceptar',decline:'Solo esenciales',newb:'Nuevo',aboutT:'Acerca de Quirkade',aboutP:'Quirkade es un estudio pequeño que hace juegos con un look y sonido únicos. Cada juego está hecho a mano, es gratis y funciona en móviles y computadores.',privT:'Privacidad',privP1:'Los juegos corren en tu navegador. El progreso se guarda solo en tu dispositivo. No pedimos registro.',privP2:'Si aceptas las cookies, nuestros socios publicitarios (como Google AdSense) pueden usarlas para mostrar y medir anuncios. Puedes cambiar tu decisión borrando los datos del sitio. Los menores de 13 años deben jugar con un adulto.',privP3:'Contacto: agrega tu correo aquí.',players1:'1 jugador',players2:'2 jugadores'},
+de:{big:'Größer',small:'Kleiner',tag:'Kostenlose Spiele mit eigenem Look und Sound.',h1a:'Spiel etwas',h1b:'herrlich Schräges.',sub:'Handgemachte Spiele, ohne Download und Anmeldung. Öffnen, spielen, lächeln.',all:'Alle',puzzle:'Puzzle',arcade:'Arcade',casual:'Casual',two:'2 Spieler',search:'Spiele suchen',play:'Spielen',fs:'Vollbild',exit:'Beenden',how:'So spielt man',more:'Mehr Spiele',back:'Alle Spiele',privacy:'Datenschutz',about:'Über uns',consent:'Wir nutzen Cookies für Werbung und Reichweitenmessung. Du kannst auch ohne sie spielen.',accept:'Akzeptieren',decline:'Nur notwendige',newb:'Neu',aboutT:'Über Quirkade',aboutP:'Quirkade ist ein kleines Studio, das Spiele mit eigenem Look und Sound macht. Jedes Spiel ist handgemacht, kostenlos und läuft auf Handy und PC.',privT:'Datenschutz',privP1:'Die Spiele laufen in deinem Browser. Fortschritt wird nur auf deinem Gerät gespeichert. Keine Registrierung nötig.',privP2:'Wenn du Cookies akzeptierst, können Werbepartner (z. B. Google AdSense) sie zur Anzeige und Messung von Werbung nutzen. Du kannst die Entscheidung durch Löschen der Websitedaten ändern. Kinder unter 13 spielen mit Eltern.',privP3:'Kontakt: E-Mail hier ergänzen.',players1:'1 Spieler',players2:'2 Spieler'},
+pt:{big:'Ampliar',small:'Reduzir',tag:'Jogos grátis com visual e som próprios.',h1a:'Jogue algo',h1b:'deliciosamente esquisito.',sub:'Jogos feitos à mão, sem download nem cadastro. Abra, jogue, sorria.',all:'Todos',puzzle:'Puzzle',arcade:'Arcade',casual:'Casual',two:'2 jogadores',search:'Buscar jogos',play:'Jogar',fs:'Tela cheia',exit:'Sair',how:'Como jogar',more:'Mais jogos',back:'Todos os jogos',privacy:'Privacidade',about:'Sobre',consent:'Usamos cookies para anúncios e medir visitas. Você pode jogar sem eles.',accept:'Aceitar',decline:'Só essenciais',newb:'Novo',aboutT:'Sobre o Quirkade',aboutP:'O Quirkade é um pequeno estúdio que faz jogos com visual e som únicos. Cada jogo é feito à mão, grátis e funciona em celulares e computadores.',privT:'Privacidade',privP1:'Os jogos rodam no seu navegador. O progresso fica só no seu dispositivo. Não pedimos cadastro.',privP2:'Se você aceitar cookies, parceiros de publicidade (como Google AdSense) podem usá-los para exibir e medir anúncios. Você pode mudar a escolha limpando os dados do site. Menores de 13 anos devem jogar com um adulto.',privP3:'Contato: adicione seu e-mail aqui.',players1:'1 jogador',players2:'2 jogadores'}};
+var lang=(function(){try{var s=localStorage.getItem('qk:lang');if(s&&T[s])return s}catch(e){}var n=(navigator.language||'en').slice(0,2);return T[n]?n:'en'})();
+var genre='all',query='';
+function t(k){return T[lang][k]||T.en[k]||k}
+function $(s){return document.querySelector(s)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function card(g){var two=g.players>1;return '<a class="card" href="#/'+g.slug+'" style="--c:'+g.color+'"><img loading="lazy" alt="" src="img/'+g.slug+'.png"><span class="badge'+(two?' two':'')+'">'+(two?t('players2'):t('players1'))+(g.isNew?' ★':'')+'</span><span class="t"><b>'+esc(g.name)+'</b><small>'+esc(g.tag[lang])+'</small></span></a>'}
+function adSlot(id){return '<div class="ad" id="'+id+'"></div>'}
+function home(){
+  var gs=CATALOG.games.filter(function(g){return (genre==='all'||(genre==='two'?g.players>1:g.genre===genre))&&(!query||(g.name+' '+g.tag[lang]).toLowerCase().indexOf(query)>=0)});
+  var gen=['all','puzzle','arcade','casual','two'].filter(function(k){return k==='all'||CATALOG.games.some(function(g){return k==='two'?g.players>1:g.genre===k})});
+  $('#app').innerHTML='<section class="hero"><h1>'+t('h1a')+' <em>'+t('h1b')+'</em></h1><p>'+t('sub')+'</p></section><div class="chips">'+gen.map(function(k){return '<button class="chip'+(k===genre?' on':'')+'" data-g="'+k+'">'+t(k)+'</button>'}).join('')+'</div><div class="grid">'+gs.map(card).join('')+'</div>'+adSlot('adH');
+  document.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){genre=b.dataset.g;home()}});
+  document.title='Quirkade – '+t('tag');document.querySelector('meta[name=description]').content=t('tag')+' '+t('sub');
+  fillAds();
+}
+function game(slug){
+  var g=CATALOG.games.filter(function(x){return x.slug===slug})[0];if(!g)return home();
+  var rel=CATALOG.games.filter(function(x){return x.slug!==slug}).slice(0,6);
+  $('#app').innerHTML='<div class="play"><div><div class="stage" style="--c:'+g.color+'55"><iframe id="fr" src="games/'+slug+'/index.html" allow="autoplay; fullscreen" title="'+esc(g.name)+'"></iframe></div><div class="bar"><a class="btn g" href="#/">← '+t('back')+'</a><button class="btn g" id="thb">'+t('big')+'</button><button class="btn" id="fsb">'+t('fs')+'</button></div>'+adSlot('adB')+'</div><aside class="side"><div class="box"><h1 style="font-size:28px">'+esc(g.name)+'</h1><p style="color:var(--mut)">'+esc(g.tag[lang])+'</p></div><div class="box"><h3>'+t('how')+'</h3><p>'+esc(g.how[lang])+'</p></div>'+adSlot('adG')+'</aside></div><div class="rail l">'+adSlot('adRL')+'</div><div class="rail r">'+adSlot('adRR')+'</div><h2>'+t('more')+'</h2><div class="grid">'+rel.map(card).join('')+'</div>';
+  $('#thb').onclick=function(){var on=document.body.classList.toggle('theater');try{localStorage.setItem('qk:theater',on?'1':'0')}catch(e){}$('#thb').textContent=t(on?'small':'big')};
+  try{if(localStorage.getItem('qk:theater')==='1'){document.body.classList.add('theater');$('#thb').textContent=t('small')}}catch(e){}
+  $('#fsb').onclick=function(){var b=document.body;if(b.classList.toggle('fs')){$('#fsb').textContent=t('exit');var e=$('.stage');try{(e.requestFullscreen||e.webkitRequestFullscreen).call(e)}catch(x){}}else{$('#fsb').textContent=t('fs');try{document.exitFullscreen&&document.exitFullscreen()}catch(x){}}};
+  document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&document.body.classList.contains('fs')){document.body.classList.remove('fs');var f=$('#fsb');if(f)f.textContent=t('fs')}});
+  document.title=g.name+' – Quirkade';
+  try{$('#fr').onload=function(){$('#fr').contentWindow.focus()}}catch(e){}
+  fillAds();
+}
+function page(k){$('#app').innerHTML='<div class="legal"><h1>'+t(k==='privacy'?'privT':'aboutT')+'</h1>'+(k==='privacy'?'<p>'+t('privP1')+'</p><p>'+t('privP2')+'</p><p>'+t('privP3')+'</p>':'<p>'+t('aboutP')+'</p>')+'</div>'}
+function route(){document.body.classList.remove('fs');document.body.classList.remove('theater');var h=(location.hash||'#/').slice(2);window.scrollTo(0,0);if(!h)home();else if(h==='privacy'||h==='about')page(h);else game(h);applyI18n()}
+function applyI18n(){document.documentElement.lang=lang;document.querySelectorAll('[data-i]').forEach(function(e){e.textContent=t(e.dataset.i)});$('#q').placeholder=t('search');$('#lang').value=lang}
+/* consent + ads (AdSense loads only if a client id is set AND the player accepted) */
+function consent(){try{return localStorage.getItem('qk:consent')}catch(e){return null}}
+function loadAds(){if(!CFG.adsenseClient||consent()!=='yes'||window.__adsLoaded)return;window.__adsLoaded=1;var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+CFG.adsenseClient;document.head.appendChild(s)}
+function fillAds(){if(!CFG.adsenseClient||consent()!=='yes')return;document.querySelectorAll('.ad').forEach(function(a){a.classList.add('on')});loadAds()}
+function askConsent(){if(consent()||!CFG.adsenseClient)return;$('#cmp').style.display='block'}
+$('#cOk').onclick=function(){try{localStorage.setItem('qk:consent','yes')}catch(e){}$('#cmp').style.display='none';fillAds()};
+$('#cNo').onclick=function(){try{localStorage.setItem('qk:consent','no')}catch(e){}$('#cmp').style.display='none'};
+$('#lang').onchange=function(e){lang=e.target.value;try{localStorage.setItem('qk:lang',lang)}catch(x){}route()};
+$('#q').oninput=function(e){query=e.target.value.toLowerCase();if(location.hash&&location.hash!=='#/'){location.hash='#/'}else home()};
+window.addEventListener('hashchange',route);route();askConsent();
+</script></body></html>
